@@ -17,6 +17,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "my-lib": [
+        "dist/my-lib"
+      ],
+      "my-lib/*": [
+        "dist/my-lib/*"
+      ],
+      "butterfly-button": [
+        "dist/butterfly-button"
+      ],
+      "butterfly-button/*": [
+        "dist/butterfly-button/*"
+      ]
+    }
   }
 }
