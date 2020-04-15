@@ -32,5 +32,10 @@
         "dist/butterfly-button/*"
       ]
     }
-  }
+  },
+  "include": [
+    ".",
+    "../node_modules/**/**/*"
+]
+
 }

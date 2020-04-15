@@ -3,6 +3,13 @@
     "dest": "../../dist/butterfly-button",
     "lib": {
         "entryFile": "src/public-api.ts"
-    }
+    },
+    "whitelistedNonPeerDependencies": [
+        "angular",
+        "core-js",
+        "rxjs",
+        "zone.js",
+        "ng-packagr"
+    ]
 
 }

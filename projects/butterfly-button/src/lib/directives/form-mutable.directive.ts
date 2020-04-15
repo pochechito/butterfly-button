@@ -1,22 +1,23 @@
-import { Directive, Input, OnInit, ElementRef } from '@angular/core';
+import { Directive, Input, OnInit, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[libFormMutable]'
 })
 export class FormMutableDirective implements OnInit {
 
-  @Input() edgeNumber: number;
   @Input() color;
-  constructor(private el: ElementRef) {
+  constructor(private el: ElementRef,private renderer: Renderer2) {
 
-    this.updateState(this.color || 'red', this.edgeNumber || 4);
 
   }
-  updateState(color, edgeNumber) {
+  updateState(color) {
     this.el.nativeElement.style.backgroundColor = color;
-    this.el.nativeElement.style.class = "bb-mutable-" + edgeNumber;
+    this.renderer.addClass(this.el.nativeElement, "bb-mutable");
+    this.renderer.addClass(this.el.nativeElement, "bb-button");
+
   }
   ngOnInit(): void {
+    this.updateState(this.color || 'red');
 
   }
 
