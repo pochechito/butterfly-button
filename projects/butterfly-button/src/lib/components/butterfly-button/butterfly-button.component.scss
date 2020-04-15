@@ -1,0 +1,70 @@
+$xs: 540px;
+$sm: 720px;
+$md: 960px;
+$lg: 1140px;
+$xl: 2000px;
+$colors:( primary: #082f55, secondary: #459df0, tertiary:#855547, phantom:#665530, dark:#456879);
+$resolutions-range: ( xs: (min:0px, max:$xs - 1px), sm: (min:$xs, max:$sm - 1px), md: (min:$sm, max:$md - 1px), lg: (min:$md, max:$lg - 1px), xl: (min:$lg, max:$xl));
+$resolutions-color: ( xs: map-get($colors, primary), sm: map-get($colors, secondary), md: map-get($colors, tertiary), lg: map-get($colors, phantom), xl: map-get($colors, dark));
+$resolutions-animation: ( xs: amazonas, sm: casanare, md: caldas, lg: antioquia, xl: guajira);
+$app-id:"bb";
+@each $name,
+$value in $resolutions-range {
+    @media screen and (min-width: map-get($value, min)) and (max-width: map-get($value, max)) {
+        .#{$app-id}-button {
+            background-color: map-get($resolutions-color, $name);
+        }
+        .#{$app-id}-mutable {
+            animation-duration: 1s;
+            animation-name: map-get($resolutions-animation, $name);
+        }
+    }
+}
+
+@keyframes amazonas {
+    from {
+        border-radius: 0px;
+    }
+    to {
+        border-radius: 10px;
+    }
+}
+
+@keyframes casanare {
+    from {
+        margin-left: 10px;
+    }
+    to {
+        margin-left: 0px;
+    }
+}
+
+@keyframes caldas {
+    from {
+        margin-right: 10px;
+    }
+    to {
+        margin-right: 0px;
+    }
+}
+
+@keyframes antioquia {
+    from {
+        box-shadow: inset 0px 0px white;
+    }
+    to {
+        box-shadow: inset 10px 0px grey;
+    }
+}
+
+@keyframes guajira {
+    from {
+        border-radius: 0px;
+    }
+    50% {
+        border-radius: 10px;
+    }
+    to {
+        border-radius: 0px;
+    }
+}

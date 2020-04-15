@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ButterflyButtonComponent } from './butterfly-button.component';
+import { ButterflyButtonComponent } from './components/butterfly-button/butterfly-button.component';
+import { FormMutableDirective } from './directives/form-mutable.directive';
 
 @NgModule({
-  declarations: [ButterflyButtonComponent],
+  declarations: [ButterflyButtonComponent, FormMutableDirective],
   imports: [
   ],
   exports: [ButterflyButtonComponent]

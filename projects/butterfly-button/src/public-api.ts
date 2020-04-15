@@ -3,5 +3,5 @@
  */
 
 export * from './lib/butterfly-button.service';
-export * from './lib/butterfly-button.component';
+export * from './lib/components/butterfly-button/butterfly-button.component';
 export * from './lib/butterfly-button.module';
